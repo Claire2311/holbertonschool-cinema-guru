@@ -16,8 +16,8 @@ function Input({
 
   return (
     <>
-      <label for={label}>
-        <FontAwesomeIcon icon={icon} />
+      <label htmlFor={label}>
+        {icon && <FontAwesomeIcon icon={icon} />}
         {label}
       </label>
 

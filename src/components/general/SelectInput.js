@@ -7,7 +7,7 @@ function SelectInput({ label, options, className, value, setValue }) {
 
   return (
     <>
-      <label for={label}>
+      <label htmlFor={label}>
         {label}
 
         <select
