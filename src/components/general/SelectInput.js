@@ -6,22 +6,17 @@ function SelectInput({ label, options, className, value, setValue }) {
   }
 
   return (
-    <>
+    <div className={className}>
       <label htmlFor={label}>
         {label}
 
-        <select
-          name={label}
-          id={label}
-          className={className}
-          onChange={handleSelect}
-        >
+        <select name={label} id={label} onChange={handleSelect}>
           {options.map((opt) => (
-            <option value={opt}></option>
+            <option value={opt}>{opt}</option>
           ))}
         </select>
       </label>
-    </>
+    </div>
   );
 }
 

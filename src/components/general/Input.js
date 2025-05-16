@@ -15,7 +15,7 @@ function Input({
   }
 
   return (
-    <>
+    <div className={className}>
       <label htmlFor={label}>
         {icon && <FontAwesomeIcon icon={icon} />}
         {label}
@@ -26,11 +26,10 @@ function Input({
         id={label}
         name={label}
         value={value}
-        className={className}
         onChange={handleInput}
         {...inputAttributes}
       />
-    </>
+    </div>
   );
 }
 
