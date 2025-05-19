@@ -13,7 +13,9 @@ function Login({ username, password, setUsername, setPassword }) {
           type="text"
           className="input-text"
           value=""
-          setValue={() => {}}
+          setValue={(e) => {
+            setUsername(e.target.value);
+          }}
           icon={faUser}
         />
         <Input
@@ -21,7 +23,9 @@ function Login({ username, password, setUsername, setPassword }) {
           type="password"
           className="input-text"
           value=""
-          setValue={() => {}}
+          setValue={(e) => {
+            setPassword(e.target.value);
+          }}
           icon={faKey}
         />
       </div>

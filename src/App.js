@@ -12,7 +12,7 @@ library.add(fas, faKey);
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userUsername, setUsername] = useState("");
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
     const accessToken = JSON.parse(localStorage.getItem("accessToken"));
