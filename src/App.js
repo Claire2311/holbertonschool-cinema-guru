@@ -5,12 +5,14 @@ import axios from "axios";
 import "./App.css";
 import Dashboard from "./routes/dashboard/Dashboard";
 import Authentification from "./routes/auth/Authentication";
+import Login from "./routes/auth/Login";
+import Authentication from "./routes/auth/Authentication";
 
 library.add(fas, faKey);
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userUsername, setUserUsername] = useState("");
+  const [userUsername, setUsername] = useState("");
 
   useEffect(() => {
     const accessToken = JSON.parse(localStorage.getItem("accessToken"));
@@ -22,7 +24,7 @@ function App() {
       .then((response) => {
         if (response.status === 200) {
           setIsLoggedIn(true);
-          setUserUsername(response.data.username);
+          setUsername(response.data.username);
         }
       })
       .catch((error) => console.error(error));
@@ -30,7 +32,10 @@ function App() {
 
   return (
     <div className="App">
-      {isLoggedIn ? <Dashboard /> : <Authentification />}
+      {/* {isLoggedIn ? <Dashboard /> : <Authentification />} */}
+      <div>
+        <Authentication />
+      </div>
     </div>
   );
 }

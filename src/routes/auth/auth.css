@@ -1,0 +1,40 @@
+.auth-component {
+  max-width: 450px;
+}
+
+.auth-component h3 {
+  font-size: 19px;
+  font-weight: normal;
+}
+
+/* Buttons at the top of the Authentication component*/
+.auth-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.auth-header button {
+  flex: 1; /* chaque bouton prend une part égale de l'espace disponible */
+  background-color: #e31c25;
+  padding: 12px;
+  border: none;
+  color: white;
+  font-size: 16px;
+}
+
+.auth-content {
+  padding: 20px 40px;
+}
+
+/* inputs in the Login and Register components*/
+.auth-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.auth-buttons {
+  display: flex;
+  justify-content: end;
+}
