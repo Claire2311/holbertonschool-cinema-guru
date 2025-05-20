@@ -1,0 +1,9 @@
+.activity-item {
+  list-style: none;
+  display: flex;
+  padding: 4px 0;
+}
+
+.activity-item span {
+  color: #f31d27;
+}
