@@ -52,25 +52,25 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
 
   return (
     <div className="auth-component">
+      <div className="auth-header">
+        <Button
+          label="Sign In"
+          className="sign-in-button"
+          onClick={() => {
+            setSwitch(true);
+          }}
+          type="button"
+        />
+        <Button
+          label="Sign Up"
+          className="sign-up-button"
+          onClick={() => {
+            setSwitch(false);
+          }}
+          type="button"
+        />
+      </div>
       <form onSubmit={handleSubmit}>
-        <div className="auth-header">
-          <Button
-            label="Sign In"
-            className="sign-in-button"
-            onClick={() => {
-              setSwitch(true);
-            }}
-            type="button"
-          />
-          <Button
-            label="Sign Up"
-            className="sign-up-button"
-            onClick={() => {
-              setSwitch(false);
-            }}
-            type="button"
-          />
-        </div>
         <div className="auth-content">
           {_switch ? (
             <Login

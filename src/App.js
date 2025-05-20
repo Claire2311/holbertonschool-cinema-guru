@@ -1,15 +1,8 @@
 import { useState, useEffect } from "react";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas, faKey } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import "./App.css";
 import Dashboard from "./routes/dashboard/Dashboard";
 import Authentification from "./routes/auth/Authentication";
-import Login from "./routes/auth/Login";
-import Authentication from "./routes/auth/Authentication";
-import Header from "./components/navigation/Header";
-
-library.add(fas, faKey);
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -31,12 +24,18 @@ function App() {
         }
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [isLoggedIn]);
 
   return (
     <div className="App">
-      {isLoggedIn ? <Dashboard /> : <Authentification />}
-      {/* <Authentication /> */}
+      {isLoggedIn ? (
+        <Dashboard userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
+      ) : (
+        <Authentification
+          setIsLoggedIn={setIsLoggedIn}
+          setUserUsername={setUserUsername}
+        />
+      )}
     </div>
   );
 }

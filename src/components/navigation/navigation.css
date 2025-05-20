@@ -1,0 +1,23 @@
+.header {
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  justify-content: space-between;
+}
+
+.header_user {
+  display: flex;
+  align-items: center;
+}
+
+.header_user img {
+  border-radius: 50%;
+  width: 40px;
+  margin-right: 10px;
+}
+.header_user span {
+  color: #bb000e;
+  margin-left: 10px;
+}
