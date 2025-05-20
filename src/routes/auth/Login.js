@@ -31,6 +31,7 @@ function Login({ username, password, setUsername, setPassword }) {
           className="button-class"
           onClick={() => {}}
           icon={faKey}
+          type="submit"
         />
       </div>
     </>

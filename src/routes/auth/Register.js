@@ -31,6 +31,7 @@ function Register({ username, password, setUsername, setPassword }) {
           className="button-class"
           onClick={() => {}}
           icon={faPlus}
+          type="submit"
         />
       </div>
     </>

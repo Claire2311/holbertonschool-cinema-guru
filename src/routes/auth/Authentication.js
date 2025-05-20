@@ -60,6 +60,7 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
             onClick={() => {
               setSwitch(true);
             }}
+            type="button"
           />
           <Button
             label="Sign Up"
@@ -67,6 +68,7 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
             onClick={() => {
               setSwitch(false);
             }}
+            type="button"
           />
         </div>
         <div className="auth-content">

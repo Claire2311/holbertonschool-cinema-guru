@@ -7,24 +7,27 @@ import Dashboard from "./routes/dashboard/Dashboard";
 import Authentification from "./routes/auth/Authentication";
 import Login from "./routes/auth/Login";
 import Authentication from "./routes/auth/Authentication";
+import Header from "./components/navigation/Header";
 
 library.add(fas, faKey);
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState("");
+  const [userUsername, setUserUsername] = useState("");
 
   useEffect(() => {
     const accessToken = JSON.parse(localStorage.getItem("accessToken"));
 
     axios
-      .post("http://localhost:8000/api/auth/", {
-        headers: { Authorization: `Bearer ${accessToken}` },
-      })
+      .post(
+        "http://localhost:8000/api/auth/",
+        {}, // Empty request body
+        { headers: { Authorization: `Bearer ${accessToken}` } }
+      )
       .then((response) => {
         if (response.status === 200) {
           setIsLoggedIn(true);
-          setUsername(response.data.username);
+          setUserUsername(response.data.username);
         }
       })
       .catch((error) => console.error(error));
@@ -32,10 +35,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* {isLoggedIn ? <Dashboard /> : <Authentification />} */}
-      <div>
-        <Authentication />
-      </div>
+      {isLoggedIn ? <Dashboard /> : <Authentification />}
+      {/* <Authentication /> */}
     </div>
   );
 }
