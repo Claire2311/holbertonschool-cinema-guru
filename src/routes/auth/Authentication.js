@@ -26,7 +26,7 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
               JSON.stringify(response.data.accessToken)
             );
             setIsLoggedIn(true);
-            setUsername(username);
+            setUserUsername(username);
           }
         })
         .catch((error) => console.error(error));
@@ -43,7 +43,7 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
               JSON.stringify(response.data.accessToken)
             );
             setIsLoggedIn(true);
-            setUsername(username);
+            setUserUsername(username);
           }
         })
         .catch((error) => console.error(error));
