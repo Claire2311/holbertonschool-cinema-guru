@@ -12,20 +12,16 @@ function Login({ username, password, setUsername, setPassword }) {
           label="Username:"
           type="text"
           className="input-text"
-          value=""
-          setValue={(e) => {
-            setUsername(e.target.value);
-          }}
+          value={username}
+          setValue={setUsername}
           icon={faUser}
         />
         <Input
           label="Password:"
           type="password"
           className="input-text"
-          value=""
-          setValue={(e) => {
-            setPassword(e.target.value);
-          }}
+          value={password}
+          setValue={setPassword}
           icon={faKey}
         />
       </div>

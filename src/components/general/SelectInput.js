@@ -10,9 +10,11 @@ function SelectInput({ label, options, className, value, setValue }) {
       <label htmlFor={label}>
         {label}
 
-        <select name={label} id={label} onChange={handleSelect}>
+        <select name={label} id={label} value={value} onChange={handleSelect}>
           {options.map((opt) => (
-            <option value={opt}>{opt}</option>
+            <option key={opt} value={opt}>
+              {opt}
+            </option>
           ))}
         </select>
       </label>

@@ -74,14 +74,14 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
             <Login
               username={username}
               password={password}
-              setUsername={setUserUsername}
+              setUsername={setUsername}
               setPassword={setPassword}
             />
           ) : (
             <Register
               username={username}
               password={password}
-              setUsername={setUserUsername}
+              setUsername={setUsername}
               setPassword={setPassword}
             />
           )}

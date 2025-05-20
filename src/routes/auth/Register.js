@@ -12,16 +12,16 @@ function Register({ username, password, setUsername, setPassword }) {
           label="Username:"
           type="text"
           className="input-text"
-          value=""
-          setValue={() => {}}
+          value={username}
+          setValue={setUsername}
           icon={faUser}
         />
         <Input
           label="Password:"
           type="password"
           className="input-text"
-          value=""
-          setValue={() => {}}
+          value={password}
+          setValue={setPassword}
           icon={faKey}
         />
       </div>
