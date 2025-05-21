@@ -6,15 +6,19 @@ function Tag({ genre, filter, genres, setGenres }) {
 
   function handleTag() {
     if (selected) {
-      setGenres("");
+      setGenres(genres.filter((g) => g !== genre));
       setSelected(false);
     } else {
-      setGenres(...genres, genre);
+      setGenres([...genres, genre]);
       setSelected(true);
     }
   }
   return (
-    <li className="tag" onClick={handleTag} filter={filter}>
+    <li
+      className={`tag${selected ? "-selected" : ""}`}
+      onClick={handleTag}
+      filter={filter}
+    >
       {genre}
     </li>
   );

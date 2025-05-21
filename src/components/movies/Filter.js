@@ -17,19 +17,19 @@ function Filter({
   setTitle,
 }) {
   const tags = [
-    "action",
-    "drama",
-    "comedy",
-    "biography",
-    "romance",
-    "thriller",
-    "war",
-    "history",
-    "sport",
-    "sci-fi",
-    "documentary",
-    "crime",
-    "fantasy",
+    "Action",
+    "Drama",
+    "Comedy",
+    "Biography",
+    "Romance",
+    "Thriller",
+    "War",
+    "History",
+    "Sport",
+    "Sci-fi",
+    "Documentary",
+    "Crime",
+    "Fantasy",
   ];
   return (
     <div>
@@ -50,12 +50,12 @@ function Filter({
       />
       <SelectInput
         label="Sort:"
-        options="['latest', 'Default']"
+        options={["latest", "Default"]}
         className={""}
         value={sort}
         setValue={setSort}
       />
-      <div>
+      <div className="tags-container">
         {tags.map((tag) => (
           <Tag
             key={tag}
