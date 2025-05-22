@@ -47,7 +47,11 @@ function SideBar() {
   }, []);
 
   return (
-    <nav>
+    <nav
+      className={`sidebar-container ${small ? "small" : "expanded"}`}
+      onMouseEnter={() => setSmall(false)}
+      onMouseLeave={() => setSmall(true)}
+    >
       {!showActivities ? (
         <div className="loading">
           <p>Loading...</p>
@@ -60,7 +64,8 @@ function SideBar() {
                 className={`menu-item ${selected === "Home" ? "selected" : ""}`}
                 onClick={() => setPage("Home")}
               >
-                <FontAwesomeIcon icon={faFolder} /> Home{" "}
+                <FontAwesomeIcon icon={faFolder} className="menu-icon" />
+                <span className="menu-text">Home</span>
                 <span className="arrow-menu-sidebar">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </span>
@@ -71,7 +76,8 @@ function SideBar() {
                 }`}
                 onClick={() => setPage("Favorites")}
               >
-                <FontAwesomeIcon icon={faStar} /> Favorites{" "}
+                <FontAwesomeIcon icon={faStar} className="menu-icon" />
+                <span className="menu-text">Favorites</span>
                 <span className="arrow-menu-sidebar">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </span>
@@ -82,21 +88,24 @@ function SideBar() {
                 }`}
                 onClick={() => setPage("Watch Later")}
               >
-                <FontAwesomeIcon icon={faClock} /> Watch Later{" "}
+                <FontAwesomeIcon icon={faClock} className="menu-icon" />
+                <span className="menu-text">Watch Later</span>
                 <span className="arrow-menu-sidebar">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </span>
               </li>
             </ul>
           </div>
-          <div className="latest-activities">
-            <h2>Latest Activities</h2>
-            <ul>
-              {activities.slice(0, 10).map((activity) => (
-                <Activity key={activity.id} activity={activity} />
-              ))}
-            </ul>
-          </div>
+          {!small && (
+            <div className="latest-activities">
+              <h2>Latest Activities</h2>
+              <ul>
+                {activities.slice(0, 10).map((activity) => (
+                  <Activity key={activity.id} activity={activity} />
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       )}
     </nav>

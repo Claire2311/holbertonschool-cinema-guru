@@ -7,15 +7,15 @@ import SideBar from "../../components/navigation/SideBar";
 function Dashboard({ userUsername, setIsLoggedIn }) {
   return (
     <BrowserRouter>
-      <div>
-        <div>
+      <div className="dashboard-container">
+        <div className="header-container">
           <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
         </div>
-        <div>
+        <div className="content-container">
           <SideBar />
-        </div>
-        <div>
-          <AppRoutes />
+          <div className="main-content">
+            <AppRoutes />
+          </div>
         </div>
       </div>
     </BrowserRouter>
