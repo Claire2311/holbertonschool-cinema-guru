@@ -6,14 +6,12 @@ function SearchBar({ title, setTitle }) {
   }
 
   return (
-    <>
-      <input
-        className="search-bar"
-        type="text"
-        value={title}
-        onChange={handleInput}
-      />
-    </>
+    <input
+      className="search-bar"
+      type="text"
+      value={title}
+      onChange={handleInput}
+    />
   );
 }
 

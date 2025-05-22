@@ -5,7 +5,7 @@ import Button from "../../components/general/Button";
 
 function Login({ username, password, setUsername, setPassword }) {
   return (
-    <>
+    <div className="auth-container">
       <h3>Sign in with your account</h3>
       <div className="auth-inputs">
         <Input
@@ -34,7 +34,7 @@ function Login({ username, password, setUsername, setPassword }) {
           type="submit"
         />
       </div>
-    </>
+    </div>
   );
 }
 

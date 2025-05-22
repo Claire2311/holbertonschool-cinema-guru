@@ -11,9 +11,11 @@ function Dashboard({ userUsername, setIsLoggedIn }) {
         <div>
           <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
         </div>
-        <AppRoutes />
         <div>
           <SideBar />
+        </div>
+        <div>
+          <AppRoutes />
         </div>
       </div>
     </BrowserRouter>

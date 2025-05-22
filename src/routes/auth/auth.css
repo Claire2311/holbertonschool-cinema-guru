@@ -1,3 +1,4 @@
+/* General styles for the Authentication component */
 .auth-component {
   max-width: 450px;
   background-color: white;
@@ -9,6 +10,7 @@
   font-weight: normal;
   padding-top: 10px;
   padding-bottom: 24px;
+  text-align: center;
 }
 
 /* Buttons at the top of the Authentication component*/

@@ -1,0 +1,34 @@
+/*HomePage*/
+.load-more-button {
+  background-color: #e31c25;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/*PRINCIPAL PAGES*/
+.page-title-h1 {
+  font-size: 63px;
+  font-weight: normal;
+  text-decoration-line: underline;
+  text-decoration-color: #e31c25;
+  text-align: center;
+  padding: 60px 0px;
+}
+
+/* display of the movie cards */
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}

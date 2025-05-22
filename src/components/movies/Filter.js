@@ -32,29 +32,35 @@ function Filter({
     "Fantasy",
   ];
   return (
-    <div>
-      <SearchBar title={title} setTitle={setTitle} />
-      <Input
-        label="Min Date:"
-        type="number"
-        className={""}
-        value={minYear}
-        setValue={setMinYear}
-      />
-      <Input
-        label="Max Date:"
-        type="number"
-        className={""}
-        value={maxYear}
-        setValue={setMaxYear}
-      />
-      <SelectInput
-        label="Sort:"
-        options={["latest", "Default"]}
-        className={""}
-        value={sort}
-        setValue={setSort}
-      />
+    <div className="filter-container">
+      <div className="filter-seachbar-dates-sort">
+        <div className="filter-searchbar">
+          <SearchBar title={title} setTitle={setTitle} />
+        </div>
+        <div className="filter-dates-sort">
+          <Input
+            label="Min Date:"
+            type="number"
+            className="filter-input"
+            value={minYear}
+            setValue={setMinYear}
+          />
+          <Input
+            label="Max Date:"
+            type="number"
+            className="filter-input"
+            value={maxYear}
+            setValue={setMaxYear}
+          />
+          <SelectInput
+            label="Sort:"
+            options={["Latest", "Oldest", "Highestrated", "Lowestrated"]}
+            className={"filter-sort"}
+            value={sort}
+            setValue={setSort}
+          />
+        </div>
+      </div>
       <div className="tags-container">
         {tags.map((tag) => (
           <Tag
