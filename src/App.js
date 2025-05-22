@@ -31,10 +31,12 @@ function App() {
       {isLoggedIn ? (
         <Dashboard userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
       ) : (
-        <Authentification
-          setIsLoggedIn={setIsLoggedIn}
-          setUserUsername={setUserUsername}
-        />
+        <div className="authentication-in-app-component">
+          <Authentification
+            setIsLoggedIn={setIsLoggedIn}
+            setUserUsername={setUserUsername}
+          />
+        </div>
       )}
     </div>
   );

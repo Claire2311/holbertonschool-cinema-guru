@@ -3,6 +3,7 @@
   max-width: 450px;
   background-color: white;
   color: #2c2c2c;
+  width: 100%;
 }
 
 .auth-component h3 {
@@ -43,4 +44,12 @@
 .auth-buttons {
   display: flex;
   justify-content: end;
+}
+
+/*Authentication*/
+.authentication-in-app-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

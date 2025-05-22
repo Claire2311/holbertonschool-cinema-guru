@@ -9,7 +9,6 @@ import {
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import "./navigation.css";
-import { set } from "lodash";
 import Activity from "../Activity";
 
 function SideBar() {
@@ -17,7 +16,6 @@ function SideBar() {
   const [small, setSmall] = useState(true);
   const [activities, setActivities] = useState([]);
   const [showActivities, setShowActivities] = useState(false);
-  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   function setPage(pageName) {
@@ -43,15 +41,14 @@ function SideBar() {
         if (response.status === 200) {
           setActivities(response.data);
         }
-        setLoading(false);
+        setShowActivities(true);
       })
       .catch((error) => console.error(error));
   }, []);
 
   return (
     <nav>
-      {" "}
-      {loading ? (
+      {!showActivities ? (
         <div className="loading">
           <p>Loading...</p>
         </div>
@@ -59,17 +56,36 @@ function SideBar() {
         <div className="sidebar">
           <div className="menu-sidebar">
             <ul>
-              <li className="menu-item" onClick={() => setPage("Home")}>
+              <li
+                className={`menu-item ${selected === "Home" ? "selected" : ""}`}
+                onClick={() => setPage("Home")}
+              >
                 <FontAwesomeIcon icon={faFolder} /> Home{" "}
                 <span className="arrow-menu-sidebar">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </span>
               </li>
-              <li className="menu-item" onClick={() => setPage("Favorites")}>
-                <FontAwesomeIcon icon={faStar} /> Favorites
+              <li
+                className={`menu-item ${
+                  selected === "Favorites" ? "selected" : ""
+                }`}
+                onClick={() => setPage("Favorites")}
+              >
+                <FontAwesomeIcon icon={faStar} /> Favorites{" "}
+                <span className="arrow-menu-sidebar">
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </span>
               </li>
-              <li className="menu-item" onClick={() => setPage("Watch Later")}>
-                <FontAwesomeIcon icon={faClock} /> Watch Later
+              <li
+                className={`menu-item ${
+                  selected === "Watch Later" ? "selected" : ""
+                }`}
+                onClick={() => setPage("Watch Later")}
+              >
+                <FontAwesomeIcon icon={faClock} /> Watch Later{" "}
+                <span className="arrow-menu-sidebar">
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </span>
               </li>
             </ul>
           </div>
