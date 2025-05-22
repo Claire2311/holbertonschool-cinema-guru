@@ -12,4 +12,5 @@ body {
 .App {
   background-color: #222222;
   color: white;
+  padding: 0 150px;
 }

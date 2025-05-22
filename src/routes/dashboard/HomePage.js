@@ -39,7 +39,8 @@ function HomePage() {
 
   return (
     <div>
-      <div>
+      <div className="homepage-filter-container">
+        <p>Search Movies</p>
         <Filter
           minYear={minYear}
           setMinYear={setMinYear}
